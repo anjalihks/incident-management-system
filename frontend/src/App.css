@@ -1,0 +1,231 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  color: white;
+}
+
+.app {
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.layout {
+  display: flex;
+  gap: 20px;
+}
+
+/* LEFT LIST */
+.list {
+  width: 30%;
+  overflow-y: auto;
+  max-height: 80vh;
+}
+
+.card {
+  background: #1e293b;
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  transition: 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+/* 🔥 ACTIVE CARD */
+.card.active {
+  border: 2px solid #4f8cff;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.component {
+  font-weight: bold;
+}
+
+.status {
+  opacity: 0.7;
+  font-size: 13px;
+}
+
+.preview {
+  font-size: 13px;
+  margin-top: 6px;
+  opacity: 0.8;
+}
+
+.count {
+  font-size: 12px;
+  opacity: 0.6;
+  margin-top: 4px;
+}
+
+/* SEVERITY COLORS */
+.severity.P0 {
+  color: red;
+}
+
+.severity.P1 {
+  color: orange;
+}
+
+.severity.P2 {
+  color: yellow;
+}
+
+.severity.P3 {
+  color: lightgreen;
+}
+
+/* BUTTON */
+.view-btn {
+  margin-top: 10px;
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #4f8cff, #6a5cff);
+  color: white;
+  cursor: pointer;
+}
+
+.view-btn:hover {
+  opacity: 0.9;
+}
+
+/* RIGHT PANEL */
+.details {
+  flex: 1;
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.rca-card {
+  margin-top: 14px;
+  margin-bottom: 16px;
+  padding: 14px;
+  border-radius: 10px;
+  background: #0f172a;
+  border: 1px solid #334155;
+}
+
+.rca-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.rca-header h3 {
+  margin: 0;
+}
+
+.rca-badge {
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: #312e81;
+  color: #c4b5fd;
+}
+
+.rca-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 12px;
+  margin-bottom: 10px;
+}
+
+.rca-grid p {
+  margin: 0;
+  font-size: 13px;
+}
+
+.rca-block {
+  margin-top: 8px;
+}
+
+.rca-label {
+  margin: 0 0 6px 0;
+  font-size: 13px;
+  color: #cbd5e1;
+}
+
+.rca-text {
+  margin: 0;
+  padding: 10px;
+  border-radius: 8px;
+  background: #111827;
+  color: #e2e8f0;
+  border: 1px solid #334155;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+/* SIGNALS */
+.signals {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.signal {
+  background: #0f172a;
+  padding: 8px;
+  margin-bottom: 6px;
+  border-radius: 6px;
+}
+
+/* FORM */
+input, select, textarea {
+  width: 100%;
+  margin-top: 10px;
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+}
+
+.form-card {
+  margin-top: 10px;
+  padding: 12px;
+  border: 1px solid #334155;
+  border-radius: 10px;
+  background: #0f172a;
+}
+
+.form-note {
+  margin: 10px 0 0 0;
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+.form-note.error {
+  color: #fca5a5;
+}
+
+/* PRIMARY BUTTON */
+.primary-btn {
+  margin-top: 12px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background: linear-gradient(90deg, #4f8cff, #9333ea);
+  color: white;
+  cursor: pointer;
+}
+
+.primary-btn:hover {
+  opacity: 0.9;
+}

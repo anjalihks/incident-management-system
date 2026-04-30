@@ -1,0 +1,184 @@
+{
+  "info": {
+    "name": "IMS API Collection",
+    "_postman_id": "7f633ec9-f5e1-4a52-a5eb-d2c6be6ea001",
+    "description": "Incident Management System API endpoints for ingest, incident lifecycle, RCA submission, signals, and observability.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Ingest Signal",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"componentId\": \"CACHE_CLUSTER_01\",\n  \"severity\": \"P2\",\n  \"message\": \"Cache miss spike\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/ingest",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "ingest"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get All Incidents",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/api/incidents",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "incidents"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Move Incident To Next State",
+      "request": {
+        "method": "PATCH",
+        "url": {
+          "raw": "{{baseUrl}}/api/incidents/:id/next",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "incidents",
+            ":id",
+            "next"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": "1"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Submit RCA",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"start_time\": \"2026-04-30T10:00\",\n  \"end_time\": \"2026-04-30T10:25\",\n  \"category\": \"Application\",\n  \"fix\": \"Rolled back release\",\n  \"prevention\": \"Canary checks + alert thresholds\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/incidents/:id/rca",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "incidents",
+            ":id",
+            "rca"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": "1"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Signals By Component",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/api/signals/:componentId",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "signals",
+            ":componentId"
+          ],
+          "variable": [
+            {
+              "key": "componentId",
+              "value": "CACHE_CLUSTER_01"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Health",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/health",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "health"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Ready",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/ready",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "ready"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Metrics",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/metrics",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "metrics"
+          ]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:5000"
+    }
+  ]
+}
